@@ -23,37 +23,40 @@
 
 
 <body>
+    <body style="background:maroon;">
     <div class="container-fluid">
-        <div class="jumbotron">
-           <h1><center>Mission to Mars</center></h1>
+        <div style="background:maroon;" class="jumbotron">
+           <h1><center><font color="white">Welcome to our Red Planet &#9732</font></center></h1>
+           <h1><center><font color="white">&#x1F601 Your Future Home! &#x1F601</font></center></h1>
+
            <center><a href = "/scrape" class = "btn btn-primary" role = "button"> Scrape New Data </a></center>
             
         </div>
         
-        <div class = "row">
-            <div class="col-md-12">
-                <h1> Latest Mars News </h1>
-                <h2>{{Mars_Data_Output.News_Title}}</h2>
-                <p>{{Mars_Data_Output.News_Paragraph}} </p>    
+        <div style="background:maroon;" class = "row">
+            <div style="background:maroon;"class="col-md-12">
+                <h1><font color = "white"> Latest Mars News </font> </h1>
+                <h2><font color = "white">{{Mars_Data_Output.News_Title}}</font></h2>
+                <p><font color = "white">{{Mars_Data_Output.News_Paragraph}}</font> </p>    
             </div
         </div>
 
 
         <div class = "row">
             <div class="col-md-6">
-                <div class = "panel border"> 
-                    <div class="panel-body">
-                        <h2>Current Weather on Mars</h2>
-                        <p>{{Mars_Data_Output.Weather}} </p>
+                <div style="background:lightskyblue;"class = "panel border"> 
+                    <div style="background:lightskyblue;"class="panel-body">
+                        <h2><font color = "navy">Current Weather on Mars</font></h2>
+                        <p><font color = "navy">{{Mars_Data_Output.Weather}}</font> </p>
                     </div>
                 </div>
             </div
                 
             <div class="col-md-6">
                 <div class = "panel"> 
-                    <div class="panel-body">
-                        <h2>Mars Facts</h2>
-                        <table>{{Mars_Data_Output.Interesting_Facts| safe}}</table>
+                    <div style="background:lightskyblue; color: navy; "class="panel-body">
+                        <h2><font color = "navy">Mars Facts</font></h2>
+                        <table><font color = "navy">{{Mars_Data_Output.Interesting_Facts| safe}}</font></table>
                     </div>
                 </div>
             </div>
@@ -67,9 +70,9 @@
 
         <div class = "row">
             <div class="col-md-12">
-                <div class = "panel"> 
-                    <div class="panel-body">
-                        <center><h2>Featured Mars Image</h2></center>
+                <div style = "background: lightskyblue;" class = "panel"> 
+                    <div style="background:maroon;"class="panel-body">
+                        <center><h2><font color = "white">Featured Mars Image</font></h2></center>
                         <center><img src = {{Mars_Data_Output.Featured_Image_Link}} alt ="" class = "featured"> </center>                  
                     </div>
                 </div>
@@ -81,8 +84,8 @@
         
 
 
-        <center><h2 class="hemispheres">Mars Hemispheres</h2></center>
-            <div class="row" style="padding-bottom:20px">
+        <center><h2 class="hemispheres"><font color = "white">Mars Hemispheres</font></h2></center>
+            <div style="color:white;"class="row" style="padding-bottom:20px">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-5 border">
                     <img src = {{ Mars_Data_Output.Hemisphere_Images[0]["Image_URL"] }} alt="" style="width:100%">
@@ -97,7 +100,7 @@
         
         
         
-            <div class="row">
+            <div style="color:white;"class="row">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-5 border" >
                     <img src = {{ Mars_Data_Output.Hemisphere_Images[2]["Image_URL"] }} alt="" style="width:100%">
