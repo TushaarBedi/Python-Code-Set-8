@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mars Data Scrapping</title>
+    
+
+
+    <!-- Importing all the Bootstrap Dependencies -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</head>  
+
+
+
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron">
+           <h1><center>Mission to Mars</center></h1>
+           <center><a href = "/scrape" class = "btn btn-primary" role = "button"> Scrape New Data </a></center>
+            
+        </div>
+        
+        <div class = "row">
+            <div class="col-md-12">
+                <h1> Latest Mars News </h1>
+                <h2>{{Mars_Data_Output.News_Title}}</h2>
+                <p>{{Mars_Data_Output.News_Paragraph}} </p>    
+            </div
+        </div>
+
+
+        <div class = "row">
+            <div class="col-md-6">
+                <div class = "panel border"> 
+                    <div class="panel-body">
+                        <h2>Current Weather on Mars</h2>
+                        <p>{{Mars_Data_Output.Weather}} </p>
+                    </div>
+                </div>
+            </div
+                
+            <div class="col-md-6">
+                <div class = "panel"> 
+                    <div class="panel-body">
+                        <h2>Mars Facts</h2>
+                        <table>{{Mars_Data_Output.Interesting_Facts| safe}}</table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+        <div class = "row">
+            <div class="col-md-12">
+                <div class = "panel"> 
+                    <div class="panel-body">
+                        <center><h2>Featured Mars Image</h2></center>
+                        <center><img src = {{Mars_Data_Output.Featured_Image_Link}} alt ="" class = "featured"> </center>                  
+                    </div>
+                </div>
+            </div
+        
+
+                      
+        </div>        
+        
+
+
+        <center><h2 class="hemispheres">Mars Hemispheres</h2></center>
+            <div class="row" style="padding-bottom:20px">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-5 border">
+                    <img src = {{ Mars_Data_Output.Hemisphere_Images[0]["Image_URL"] }} alt="" style="width:100%">
+                    <p class = "caption">{{ Mars_Data_Output.Hemisphere_Images[0]["Title"]}}</p>
+                </div>
+                <div class="col-sm-5 border" >
+                    <img src = {{ Mars_Data_Output.Hemisphere_Images[1]["Image_URL"] }} alt="" style="width:100%">
+                    <p class = "caption">{{ Mars_Data_Output.Hemisphere_Images[1]["Title"]}}</p>
+                </div>     
+                <div class="col-sm-1"></div>
+            </div>
+        
+        
+        
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-5 border" >
+                    <img src = {{ Mars_Data_Output.Hemisphere_Images[2]["Image_URL"] }} alt="" style="width:100%">
+                    <p class = "caption">{{ Mars_Data_Output.Hemisphere_Images[2]["Title"]}}</p>
+                </div>
+                <div class="col-sm-5 border" >
+                    <img src = {{ Mars_Data_Output.Hemisphere_Images[3]["Image_URL"] }} alt="" style="width:100%">
+                    <p class = "caption">{{ Mars_Data_Output.Hemisphere_Images[3]["Title"]}}</p>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+
+
+    </div>
+ 
+        
+        
+      
+
+
+
+
+</body>
+
+</html>
