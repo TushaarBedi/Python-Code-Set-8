@@ -25,6 +25,8 @@ def scrape():
     nasa_mars_news_title = browser.find_by_css('.content_title').first.text
     # Store the first headline in the nasa_mars_news_paragraph variable
     nasa_mars_news_paragraph  = browser.find_by_css('.article_teaser_body').first.text
+    
+    print("Mars News scraping is complete!")
         
     #----------------------------------------------------------------------------------------------
     # Scrape code for the URL of JPL Mars Space Images - Featured Image
@@ -42,6 +44,9 @@ def scrape():
     Image_URL = jpl_results.find('a')['data-fancybox-href']
     # When we print Image_URL we find that it is a partial URL and needs to be appended by the leading URL which we do below
     Featured_Image_URL = "https://www.jpl.nasa.gov" + Image_URL
+    
+    print("Mars JPL Featured Image scraping is complete!")
+
 
     #----------------------------------------------------------------------------------------------
     # Scrape code for the Mars Weather (from Mars Twitter Page)
@@ -54,6 +59,8 @@ def scrape():
         if text.text.partition(' ')[0] == 'Sol': # Selecting the 'first' tweet in the web page
             mars_weather = text.text # storing the tweet in the mars_weather variable
             break
+    
+    print("Mars Twitter Weather scraping is complete!")
 
     #----------------------------------------------------------------------------------------------
     # Scrape code for the Mars Facts
@@ -67,6 +74,8 @@ def scrape():
     mars_df = mars_planet_profile_df.set_index('Measurements') 
     # Converting our Dataframe to HTML table string using .to_html() feature
     mars_facts_HTML_table_string = mars_df.to_html()
+    
+    print("Mars Facts Table Scraping is complete!")
 
     #----------------------------------------------------------------------------------------------
     # Scrape code for the Mars Hemispheres
@@ -101,6 +110,8 @@ def scrape():
         # Appending all the information in our array of dictionaries, as asked for in the homework    
         hemisphere_image_urls.append({"Title": image_title, "Image_URL": image_url}) 
     
+    print("Mars Hemispheres Image URLs scraping is complete!")
+
     #----------------------------------------------------------------------------------------------
     # Creating output dictionary which will contail ALL of our scraped data
 
@@ -113,7 +124,10 @@ def scrape():
                         "Hemisphere_Images": hemisphere_image_urls
                         }
     
+    print("All data scraping from our scrape() function is complete and data output dictionary has been generated!")
+
     return (scrape_mars_dict)
+
     
 
 

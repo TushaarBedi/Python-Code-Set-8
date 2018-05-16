@@ -24,7 +24,7 @@ def scrape():
             upsert=True
         )
 
-    print("Data Scraping is complete")
+    print("Flask Web Service Call for Data Scraping is complete!")
     return redirect("http://localhost:5000/", code=302)
     
 
