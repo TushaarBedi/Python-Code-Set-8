@@ -85,12 +85,17 @@
             <div style="color:white;"class="row" style="padding-bottom:20px">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-5 border">
-                    <img src = {{ Mars_Data_Output.Hemisphere_Images[0]["Image_URL"] }} alt="" style="width:100%">
-                    <p class = "caption">{{ Mars_Data_Output.Hemisphere_Images[0]["Title"]}}</p>
+                    {% if (Mars_Data_Output) %}
+                        <img src = {{ Mars_Data_Output.Hemisphere_Images[0]["Image_URL"] }} alt="" style="width:100%">
+                        <p class = "caption">{{ Mars_Data_Output.Hemisphere_Images[0]["Title"]}}</p>
+                    {% endif %}
                 </div>
                 <div class="col-sm-5 border" >
-                    <img src = {{ Mars_Data_Output.Hemisphere_Images[1]["Image_URL"] }} alt="" style="width:100%">
-                    <p class = "caption">{{ Mars_Data_Output.Hemisphere_Images[1]["Title"]}}</p>
+                    {% if (Mars_Data_Output) %}
+                        <img src = {{ Mars_Data_Output.Hemisphere_Images[1]["Image_URL"] }} alt="" style="width:100%">
+                        <p class = "caption">{{ Mars_Data_Output.Hemisphere_Images[1]["Title"]}}</p>
+                    {% endif %}
+                
                 </div>     
                 <div class="col-sm-1"></div>
             </div>
@@ -100,12 +105,20 @@
             <div style="color:white;"class="row">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-5 border" >
-                    <img src = {{ Mars_Data_Output.Hemisphere_Images[2]["Image_URL"] }} alt="" style="width:100%">
-                    <p class = "caption">{{ Mars_Data_Output.Hemisphere_Images[2]["Title"]}}</p>
+                    {% if (Mars_Data_Output) %}
+                        <img src = {{ Mars_Data_Output.Hemisphere_Images[2]["Image_URL"] }} alt="" style="width:100%">
+                        <p class = "caption">{{ Mars_Data_Output.Hemisphere_Images[2]["Title"]}}</p>
+                    {% endif %}
+                
+                
                 </div>
                 <div class="col-sm-5 border" >
+                {% if (Mars_Data_Output) %}
                     <img src = {{ Mars_Data_Output.Hemisphere_Images[3]["Image_URL"] }} alt="" style="width:100%">
                     <p class = "caption">{{ Mars_Data_Output.Hemisphere_Images[3]["Title"]}}</p>
+                {% endif %}
+                
+                
                 </div>
                 <div class="col-sm-1"></div>
             </div>
